@@ -12,15 +12,6 @@ $(function() {
     function Column(name) {
         var self = this;
 
-        Column.prototype = {
-            addCard: function(card) {
-                this.$element.children('ul').append(card.$element);
-            },
-            removeColumn: function() {
-                this.$element.remove();
-            }
-        };
-
         this.id = randomString();
         this.name = name;
         this.$element = createColumn();
@@ -48,6 +39,15 @@ $(function() {
             return $column;   
         }
     };
+
+    Column.prototype = {
+            addCard: function(card) {
+                this.$element.children('ul').append(card.$element);
+            },
+            removeColumn: function() {
+                this.$element.remove();
+            }
+        };
 
     function Card(description) {
         var self = this;
